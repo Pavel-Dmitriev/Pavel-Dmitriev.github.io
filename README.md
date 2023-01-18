@@ -8,4 +8,4 @@
 
 [to-do-list](https://pavel-dmitriev.github.io/to-do-list/src/) - список дел на чистом js.
 
-[todo-react-effector](https://pavel-dmitriev.github.io/todo-react-effector/index) - список дел на react, effector, tailwind.
+[todo-react-effector](https://pavel-dmitriev.github.io/todo-react-effector/) - список дел на react, effector, tailwind.
