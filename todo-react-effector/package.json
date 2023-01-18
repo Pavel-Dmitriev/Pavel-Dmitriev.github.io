@@ -41,7 +41,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
-  "homepage": "https://Pavel-Dmitriev.github.io",
+  "homepage": "https://Pavel-Dmitriev.github.io/todo-react-effector",
   "eslintConfig": {
     "extends": [
       "react-app",
