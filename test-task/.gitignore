@@ -1,0 +1,19 @@
+# Editor settings
+.vscode/
+.idea/
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# Temporary and cache files
+*.log
+*.tmp
+.cache/
+.tmp/
+
+# Dependency and build outputs
+node_modules/
+dist/
+build/
+coverage/
