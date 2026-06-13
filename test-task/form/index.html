@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        font-family: Roboto, sans-serif;
+        min-height: 100vh;
+        font-size: 1.3rem;
+        background-color: #c2c1c1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      .form {
+        max-width: 750px;
+        min-width: 750px;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .form__header {
+        width: 100%;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .form__title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        display: inline-block;
+      }
+      .form__note {
+        font-size: 0.8rem;
+        color: #666;
+      }
+      .form__body {
+        width: 100%;
+        padding: 20px 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        background-color: #f4f5ef;
+      }
+      .form__section-title {
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+      }
+      .form__section:first-of-type .form__section-title {
+        transform: translateX(-32px);
+      }
+      .form__section:last-of-type .form__section-title {
+        transform: translateX(8px);
+      }
+      .form__group {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .form__label {
+        color: #333;
+        display: block;
+        margin-bottom: 4px;
+        font-size: 1rem;
+        justify-self: end;
+        align-self: center;
+      }
+      .form__input {
+        max-height: 36px;
+      }
+
+      .form__input,
+      .form__textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #222;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+      }
+      .form__input::placeholder,
+      .form__textarea::placeholder {
+        color: #999;
+        max-width: 60%;
+      }
+      .form__input:focus,
+      .form__textarea:focus {
+        outline: none;
+      }
+      .form__select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .form__select option {
+        padding: 0;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="form">
+      <div class="form__header">
+        <h1 class="form__title">Заполните поля</h1>
+        <span class="form__note">ну пожалуйста</span>
+      </div>
+      <form action="#" method="post" class="form__body">
+        <section class="form__section">
+          <h2 class="form__section-title">Основное</h2>
+          <div class="form__group">
+            <label for="name" class="form__label">Имя</label>
+            <input
+              type="text"
+              class="form__input"
+              id="name"
+              placeholder="по паспорту"
+            />
+          </div>
+          <div class="form__group">
+            <label for="color" class="form__label">Выберите цвет</label>
+            <select class="form__select" id="color">
+              <option value="red" style="background: #e74c3c"></option>
+              <option value="green" style="background: #27ae60"></option>
+              <option value="blue" style="background: #3498db"></option>
+            </select>
+          </div>
+        </section>
+
+        <section class="form__section">
+          <h2 class="form__section-title">Дополнительное</h2>
+          <div class="form__group">
+            <label for="comment" class="form__label" style="align-self: start"
+              >Комментарий</label
+            >
+            <textarea
+              class="form__textarea"
+              id="comment"
+              rows="3"
+              placeholder="Напишите хоть что-нибудь. Если хотите, конечно."
+            ></textarea>
+          </div>
+          <div class="form__check">
+            <input type="radio" class="form__radio-input" id="radio" />
+            <label class="form__radio-label" for="radio"
+              >Ну а тут просто полежит радиобатон</label
+            >
+            <input type="checkbox" class="form__checkbox-input" id="checkbox" />
+            <label class="form__checkbox-label" for="checkbox"
+              >Соглашаюсь на все, что вы не придумали и осознаю, что это может
+              означать <a href="#something">что угодно</a></label
+            >
+          </div>
+        </section>
+
+        <button type="submit" class="form__button form__button--primary">
+          Отправить все мои данные
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
