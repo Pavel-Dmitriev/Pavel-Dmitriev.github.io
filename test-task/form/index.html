@@ -4,137 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        font-size: 16px;
-      }
-      body {
-        font-family: Roboto, sans-serif;
-        min-height: 100vh;
-        font-size: 1.3rem;
-        background-color: #c2c1c1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-      button,
-      input,
-      select,
-      textarea {
-        font: inherit;
-      }
-      .form {
-        max-width: 750px;
-        min-width: 750px;
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .form__header {
-        width: 100%;
-        margin-bottom: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-      .form__title {
-        font-size: 1.5rem;
-        line-height: 1.2;
-        display: inline-block;
-      }
-      .form__note {
-        font-size: 0.8rem;
-        color: #666;
-      }
-      .form__body {
-        width: 100%;
-        padding: 20px 40px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        background-color: #f4f5ef;
-      }
-      .form__section-title {
-        margin-bottom: 12px;
-        font-size: 1.35rem;
-        font-weight: 700;
-        text-align: center;
-        color: #333;
-      }
-      .form__section:first-of-type .form__section-title {
-        transform: translateX(-32px);
-      }
-      .form__section:last-of-type .form__section-title {
-        transform: translateX(8px);
-      }
-      .form__group {
-        display: grid;
-        grid-template-columns: 1fr 400px;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-      .form__label {
-        color: #333;
-        display: block;
-        margin-bottom: 4px;
-        font-size: 1rem;
-        justify-self: end;
-        align-self: center;
-      }
-      .form__input {
-        max-height: 36px;
-      }
-
-      .form__input,
-      .form__textarea {
-        width: 100%;
-        padding: 8px 10px;
-        border-radius: 4px;
-        background-color: #fff;
-        color: #222;
-        font-size: 1rem;
-        border: none;
-        outline: none;
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
-      }
-      .form__input::placeholder,
-      .form__textarea::placeholder {
-        color: #999;
-        max-width: 60%;
-      }
-      .form__input:focus,
-      .form__textarea:focus {
-        outline: none;
-      }
-      .form__select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-      .form__select option {
-        padding: 0;
-        color: transparent;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <section class="form">
@@ -154,13 +24,40 @@
               placeholder="по паспорту"
             />
           </div>
-          <div class="form__group">
-            <label for="color" class="form__label">Выберите цвет</label>
-            <select class="form__select" id="color">
-              <option value="red" style="background: #e74c3c"></option>
-              <option value="green" style="background: #27ae60"></option>
-              <option value="blue" style="background: #3498db"></option>
-            </select>
+          <div class="form__group" style="margin-bottom: 0">
+            <label class="form__label">Цвет вашего настроения</label>
+            <div class="form__dropdown">
+              <input
+                type="hidden"
+                name="color"
+                value="red"
+                style="display: none"
+                id="colorValue"
+              />
+              <button
+                type="button"
+                class="form__dropdown-toggle"
+                id="colorToggle"
+                style="background-color: red"
+              ></button>
+              <div class="form__dropdown-menu" id="colorMenu" hidden>
+                <button
+                  type="button"
+                  class="form__color-chip form__color-chip--red is-active"
+                  style="background-color: red"
+                ></button>
+                <button
+                  type="button"
+                  class="form__color-chip form__color-chip--green"
+                  style="background-color: green"
+                ></button>
+                <button
+                  type="button"
+                  class="form__color-chip form__color-chip--blue"
+                  style="background-color: blue"
+                ></button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -178,22 +75,96 @@
             ></textarea>
           </div>
           <div class="form__check">
-            <input type="radio" class="form__radio-input" id="radio" />
-            <label class="form__radio-label" for="radio"
-              >Ну а тут просто полежит радиобатон</label
-            >
-            <input type="checkbox" class="form__checkbox-input" id="checkbox" />
-            <label class="form__checkbox-label" for="checkbox"
-              >Соглашаюсь на все, что вы не придумали и осознаю, что это может
-              означать <a href="#something">что угодно</a></label
-            >
+            <div></div>
+            <div class="form__check-item">
+              <label class="form__choice form__choice--radio" for="radio">
+                <input
+                  type="checkbox"
+                  class="form__checkbox-input"
+                  id="radio"
+                  name="choice"
+                />
+                <span class="form__choice-mark"></span>
+                <span class="form__choice-label"
+                  >Ну а тут просто полежит радиобатон</span
+                >
+              </label>
+              <label class="form__choice form__choice--checkbox" for="checkbox">
+                <input
+                  type="checkbox"
+                  class="form__checkbox-input"
+                  id="checkbox"
+                  name="agree"
+                />
+                <span class="form__choice-mark"></span>
+                <span class="form__choice-label"
+                  >Соглашаюсь на все, что вы не придумали и осознаю, что это
+                  может означать <a href="#something">что угодно</a></span
+                >
+              </label>
+            </div>
           </div>
         </section>
 
-        <button type="submit" class="form__button form__button--primary">
-          Отправить все мои данные
-        </button>
+        <div class="form__footer">
+          <div></div>
+          <div>
+            <button type="submit" class="form__button form__button--primary">
+              Отправить все мои данные
+            </button>
+          </div>
+        </div>
       </form>
     </section>
+    <script>
+      const form = document.querySelector(".form__body");
+      const dropdownToggle = document.getElementById("colorToggle");
+      const dropdownMenu = document.getElementById("colorMenu");
+      const colorInput = document.getElementById("colorValue");
+      const nameInput = document.getElementById("name");
+      const commentInput = document.getElementById("comment");
+      const radioInput = document.getElementById("radio");
+      const checkboxInput = document.getElementById("checkbox");
+
+      const colorButtons = dropdownMenu.querySelectorAll(".form__color-chip");
+
+      function updateSelected(button) {
+        colorButtons.forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+        const color = button.style.backgroundColor;
+        colorInput.value = color;
+        dropdownToggle.style.backgroundColor = color;
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        console.log({
+          name: nameInput.value,
+          color: colorInput.value,
+          comment: commentInput.value,
+          choice: radioInput.checked,
+          agree: checkboxInput.checked,
+        });
+      });
+
+      dropdownToggle.addEventListener("click", () => {
+        const isOpen = !dropdownMenu.hidden;
+        dropdownMenu.hidden = isOpen;
+      });
+
+      colorButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          updateSelected(button);
+          dropdownMenu.hidden = true;
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".form__dropdown")) {
+          dropdownMenu.hidden = true;
+        }
+      });
+    </script>
   </body>
 </html>
