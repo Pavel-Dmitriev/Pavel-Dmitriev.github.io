@@ -1,0 +1,199 @@
+:root {
+  --color-primary: #e5e7eb;
+  --color-primary-hover: #d1d5db;
+  --color-primary-active: #bdc2c9;
+
+  --color-border: var(--color-primary-hover);
+  --color-danger: #dc3545;
+  --color-danger-hover: #c82333;
+  --color-danger-active: #a71d2a;
+  --color-green: #27a11c;
+  --color-green-hover: #22821a;
+  --color-green-active: #1a6b13;
+
+  --color-text: #fff;
+  --color-text-dark: #333;
+  --color-disabled: #ccc;
+}
+
+.btn {
+  --btn-bg: var(--color-primary);
+  --btn-bg-hover: var(--color-primary-hover);
+  --btn-bg-active: var(--color-primary-active);
+  --btn-color: var(--color-text-dark);
+  --btn-color-hover: var(--btn-color);
+  --btn-color-active: var(--btn-color);
+  --btn-border: var(--color-border);
+  --btn-border-hover: var(--btn-border);
+  --btn-border-active: var(--btn-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 2px solid var(--btn-border);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  appearance: none;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  margin: 0;
+  font-family: inherit;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-color-hover);
+  border-color: var(--btn-border-hover);
+}
+
+.btn:active:not(:disabled) {
+  background-color: var(--btn-bg-active);
+  color: var(--btn-color-active);
+  border-color: var(--btn-border-active);
+}
+
+.btn[data-state="hover"] {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-color-hover);
+  border-color: var(--btn-border-hover);
+}
+
+.btn[data-state="active"] {
+  background-color: var(--btn-bg-active);
+  color: var(--btn-color-active);
+  border-color: var(--btn-border-active);
+}
+
+.btn--primary {
+  --btn-bg: var(--color-primary);
+}
+
+.btn--border-red {
+  --btn-border: red;
+}
+
+.btn--border-green {
+  --btn-border: green;
+}
+
+.btn--arrow::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--color-danger);
+  margin-left: 4px;
+}
+
+.btn--arrow:disabled::after {
+  border-left-color: var(--color-disabled);
+}
+
+.btn--filled-red {
+  --btn-bg: var(--color-danger);
+  --btn-bg-hover: var(--color-danger-hover);
+  --btn-bg-active: var(--color-danger-active);
+  --btn-color: var(--color-text);
+  --btn-border: var(--color-danger);
+  --btn-border-hover: var(--color-danger-hover);
+  --btn-border-active: var(--color-danger-active);
+}
+
+.btn--filled-green {
+  --btn-bg: var(--color-green);
+  --btn-bg-hover: var(--color-green-hover);
+  --btn-bg-active: var(--color-green-active);
+  --btn-color: var(--color-text);
+  --btn-border: var(--color-green);
+  --btn-border-hover: var(--color-green-hover);
+  --btn-border-active: var(--color-green-active);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.buttons-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button-block {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.button-type {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.button-type__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button-type__column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-type__column .btn {
+  width: 100%;
+}
+
+.icon-button-block {
+  margin-top: 32px;
+}
+
+.icon-button-block__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px;
+}
+
+.icon-button-block__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.icon-button-block__row .btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
