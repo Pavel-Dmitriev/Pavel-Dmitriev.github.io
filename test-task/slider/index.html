@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <style>
+      .showcase {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 12px;
+      }
+
+      .showcase__track {
+        display: flex;
+        min-width: max-content;
+      }
+
+      .product-card {
+        flex: 0 0 290px;
+        border-right: 1px solid #e5e5e5;
+        padding: 24px;
+        background: #fff;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: contain;
+        display: inline-block;
+      }
+
+      .product-card p {
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 1.4;
+        color: #4d4d4d;
+      }
+
+      .showcase::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      .showcase::-webkit-scrollbar-track {
+        background: #e3e3e3;
+        border-radius: 999px;
+      }
+
+      .showcase::-webkit-scrollbar-thumb {
+        background: #9d1b26;
+        border-radius: 999px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="showcase">
+      <div class="showcase__track">
+        <div class="product-card">
+          <img src="picture.avif" alt="" />
+          <p>
+            Набор настольный BESTAR «Amenhotep» из дерева, 8 предметов, двойной
+            лоток, светлая вишня
+          </p>
+        </div>
+
+        <div class="product-card">
+          <img src="picture.avif" alt="" />
+          <p>
+            Набор настольный BESTAR «Charon» из дерева, 7 предметов, двойной
+            лоток, красное дерево
+          </p>
+        </div>
+
+        <div class="product-card">
+          <img src="picture.avif" alt="" />
+          <p>
+            Набор настольный BESTAR «Charon» из дерева, 7 предметов, двойной
+            лоток, орех
+          </p>
+        </div>
+
+        <div class="product-card">
+          <img src="picture.avif" alt="" />
+          <p>
+            Набор настольный BESTAR «Hercules» из дерева, 5 предметов, двойной
+            лоток, красное дерево
+          </p>
+        </div>
+
+        <div class="product-card">
+          <img src="picture.avif" alt="" />
+          <p>
+            Набор настольный BESTAR «Hercules» из дерева, 5 предметов, двойной
+            лоток
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
