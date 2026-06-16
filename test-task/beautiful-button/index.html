@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beautiful Button</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #4d74a8;
+        font-family: Arial, sans-serif;
+      }
+
+      .btn {
+        position: relative;
+        width: 180px;
+        height: 55px;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        overflow: hidden;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        background: linear-gradient(180deg, #6f98cb 0%, #4d79b0 100%);
+        box-shadow:
+          inset 0 2px 2px rgba(255, 255, 255, 0.25),
+          inset 0 -2px 2px rgba(0, 0, 0, 0.15),
+          0 8px 18px rgba(0, 0, 0, 0.25);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(180deg, #7fb0ec 0%, #5a8ccc 100%);
+        box-shadow:
+          inset 0 2px 2px rgba(255, 255, 255, 0.35),
+          inset 0 -2px 2px rgba(0, 0, 0, 0.12),
+          0 10px 25px rgba(0, 0, 0, 0.35),
+          0 0 20px rgba(132, 180, 255, 0.35);
+      }
+
+      .btn:active {
+        transform: translateY(2px) scale(0.98);
+        box-shadow:
+          inset 0 4px 10px rgba(0, 0, 0, 0.25),
+          inset 0 -2px 4px rgba(255, 255, 255, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Кнопка</button>
+  </body>
+</html>
