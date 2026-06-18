@@ -1,0 +1,49 @@
+body {
+  background-color: #1e252b;
+  font-family: Arial, sans-serif;
+  margin: 50px;
+}
+
+.schema-container {
+  display: grid;
+  gap: 16px;
+  justify-content: start;
+  grid-template-columns: repeat(5, 230px);
+  grid-template-rows: repeat(10, 50px);
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 15px 25px;
+  border-radius: 2px;
+  text-align: center;
+  min-width: 180px;
+  font-size: 14px;
+}
+
+#duhast,
+#vozignuy,
+#boltushkina,
+#shirinkina,
+#troyan,
+#visyulkin {
+  grid-column: 5 / 6;
+}
+
+#klitotehnis,
+#zverek,
+#stroy {
+  grid-column: 2 / 3;
+  transform: translateX(-95px);
+}
+
+#vodolazskaya,
+#borgdorf,
+#brys {
+  grid-column: 3 / 4;
+  transform: translateX(-160px);
+}
